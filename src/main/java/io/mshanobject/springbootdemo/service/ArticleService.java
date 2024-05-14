@@ -1,5 +1,7 @@
 package io.mshanobject.springbootdemo.service;
 
+import io.mshanobject.springbootdemo.model.Article;
+
 public interface ArticleService {
     // 전체 글보기
     public String getArticles();
@@ -14,6 +16,7 @@ public interface ArticleService {
     // 글 삭제
 
     // 글쓰기
+    public String addArticle(Article article);
 
     // 페이징
     //public Page<>

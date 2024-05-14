@@ -1,5 +1,6 @@
 package io.mshanobject.springbootdemo.service;
 
+import io.mshanobject.springbootdemo.model.Article;
 import io.mshanobject.springbootdemo.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,11 @@ public class ArticleServiceImpl implements ArticleService {
     // articleId 로 글 상세보기
     public String getArticleById(String articleId) {
         return articleRepository.selectArticleById(articleId);
+    }
+
+    @Override
+    public String addArticle(Article article) {
+        return articleRepository.insertArticle(article);
     }
 
     // 글 수정

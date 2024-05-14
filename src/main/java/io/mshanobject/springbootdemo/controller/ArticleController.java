@@ -1,10 +1,9 @@
 package io.mshanobject.springbootdemo.controller;
 
+import io.mshanobject.springbootdemo.model.Article;
 import io.mshanobject.springbootdemo.service.ArticleService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -37,5 +36,12 @@ public class ArticleController {
 
     // 비공개 글 상세보기
     //@GetMapping("/private/articles/{articleId}")
+
+    // 글쓰기
+    @PostMapping("/articles")
+    public String createArticle(@RequestBody Article article) {
+        System.out.println(article);
+        return articleService.addArticle(article);
+    }
 }
 

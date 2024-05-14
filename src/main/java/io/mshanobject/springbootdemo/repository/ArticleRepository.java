@@ -1,5 +1,6 @@
 package io.mshanobject.springbootdemo.repository;
 
+import io.mshanobject.springbootdemo.model.Article;
 import org.springframework.stereotype.Repository;
 
 // Articles 테이블과 1:1 매핑
@@ -15,5 +16,10 @@ public class ArticleRepository {
 
     public String selectArticleById(String articleId) {
         return articleId + "번 글 상세내용입니다.";
+    }
+
+    public String insertArticle(Article article) {
+        System.out.println(article);
+        return "Insert Success";
     }
 }
