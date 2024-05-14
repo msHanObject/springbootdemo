@@ -20,14 +20,14 @@ public class ArticleController {
 
     // 글 목록 가져오기
     @GetMapping("/articles")
-    public String readArticles() {
+    public String getArticles() {
         // 글 전체보기 요청이 왔을때 모든 글을 조회해서 응답해준다.
         return articleService.getArticles();
     }
 
     // articleId 로 글 상세보기
     @GetMapping("/articles/{articleId}")
-    public String readArticleById(@PathVariable String articleId) {
+    public String getArticleById(@PathVariable String articleId) {
         return articleService.getArticleById(articleId);
     }
 
@@ -39,7 +39,7 @@ public class ArticleController {
 
     // 글쓰기
     @PostMapping("/articles")
-    public String createArticle(@RequestBody Article article) {
+    public String postArticle(@RequestBody Article article) {
         System.out.println(article);
         return articleService.addArticle(article);
     }
