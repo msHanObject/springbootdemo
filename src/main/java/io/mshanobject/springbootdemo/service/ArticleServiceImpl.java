@@ -5,6 +5,9 @@ import io.mshanobject.springbootdemo.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
+import java.util.List;
+
 // 글에 대한 기능을 포함하고 있다.
 @RequiredArgsConstructor
 @Service
@@ -14,18 +17,18 @@ public class ArticleServiceImpl implements ArticleService {
     private final ArticleRepository articleRepository;
 
     // 전체 글보기
-    public String getArticles() {
+    public List<Article> getArticles() {
         return articleRepository.selectArticles();
     }
 
     // articleId 로 글 상세보기
-    public String getArticleById(String articleId) {
+    public Article getArticleById(BigInteger articleId) {
         return articleRepository.selectArticleById(articleId);
     }
 
     @Override
-    public String addArticle(Article article) {
-        return articleRepository.insertArticle(article);
+    public void addArticle(Article article) {
+        articleRepository.insertArticle(article);
     }
 
     // 글 수정

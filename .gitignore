@@ -3,6 +3,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# 운영환경에서 ignore 대상
+#application.properties
+
 ### STS ###
 .apt_generated
 .classpath

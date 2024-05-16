@@ -2,12 +2,15 @@ package io.mshanobject.springbootdemo.service;
 
 import io.mshanobject.springbootdemo.model.Article;
 
+import java.math.BigInteger;
+import java.util.List;
+
 public interface ArticleService {
     // 전체 글보기
-    public String getArticles();
+    public List<Article> getArticles();
 
     // articleId 로 글 상세보기
-    public String getArticleById(String articleId);
+    public Article getArticleById(BigInteger articleId);
 
     // 글 수정
 
@@ -16,7 +19,7 @@ public interface ArticleService {
     // 글 삭제
 
     // 글쓰기
-    public String addArticle(Article article);
+    public void addArticle(Article article);
 
     // 페이징
     //public Page<>
