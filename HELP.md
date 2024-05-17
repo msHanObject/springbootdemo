@@ -29,3 +29,5 @@ POSTMAN Body raw type:JSON
   "likes": 0
 }
 ```
+log4j2 설정 방법 참고
+* https://tlo-developer.tistory.com/324
