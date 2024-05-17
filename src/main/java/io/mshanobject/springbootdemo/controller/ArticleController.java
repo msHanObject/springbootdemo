@@ -3,11 +3,13 @@ package io.mshanobject.springbootdemo.controller;
 import io.mshanobject.springbootdemo.model.Article;
 import io.mshanobject.springbootdemo.service.ArticleService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigInteger;
 import java.util.List;
 
+@Slf4j
 @RequiredArgsConstructor
 @RestController
 public class ArticleController {
@@ -25,6 +27,7 @@ public class ArticleController {
     @GetMapping("/articles")
     public List<Article> getArticles() {
         // 글 전체보기 요청이 왔을때 모든 글을 조회해서 응답해준다.
+        log.debug("전체보기 요청이 와서 실행됨.");
         return articleService.getArticles();
     }
 

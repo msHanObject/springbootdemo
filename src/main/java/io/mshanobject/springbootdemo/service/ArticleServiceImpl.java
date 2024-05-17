@@ -3,21 +3,30 @@ package io.mshanobject.springbootdemo.service;
 import io.mshanobject.springbootdemo.model.Article;
 import io.mshanobject.springbootdemo.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
 import java.util.List;
 
-// 글에 대한 기능을 포함하고 있다.
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class ArticleServiceImpl implements ArticleService {
+
+    /*
+     * @Slf4j 롬복을 쓰면 아래 코드를 자동 생성 해줌
+     * private static final Logger log = LoggerFactory.getLogger(ArticleService.class);
+     */
 
     //@Autowired
     private final ArticleRepository articleRepository;
 
     // 전체 글보기
     public List<Article> getArticles() {
+        log.debug("서비스 메소드 실행");
         return articleRepository.selectArticles();
     }
 
