@@ -2,8 +2,6 @@ package io.mshanobject.springbootdemo.configuration;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,8 +12,6 @@ import javax.sql.DataSource;
 @Configuration
 @PropertySource("classpath:/application.properties")
 public class DataSourceConfiguration {
-
-    //private static Logger log = LoggerFactory.getLogger(DatabaseConfiguration.class);
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.hikari")
