@@ -4,13 +4,13 @@ package io.mshanobject.springbootdemo.model;
 import lombok.*;
 
 @Data
-@AllArgsConstructor(access = AccessLevel.PACKAGE)
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Article {
 
     private Long id;
     private String title;
     private String author;
     private String content;
-    private int likes;
+    private Long likes;
 
 }
