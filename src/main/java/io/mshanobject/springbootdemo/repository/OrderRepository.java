@@ -1,11 +1,7 @@
 package io.mshanobject.springbootdemo.repository;
 
 import io.mshanobject.springbootdemo.model.Order;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Mapper
-@Repository
-public interface OrderRepository {
-    public void insertOrder(Order order);
+public interface OrderRepository extends JpaRepository<Order, Long> {
 }
